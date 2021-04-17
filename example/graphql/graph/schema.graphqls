@@ -1,0 +1,7 @@
+type Subscription {
+  newMessagePosted(chatRoom: String!): String!
+}
+
+type Mutation {
+  postMessage(chatRoom: String!, message: String!): Boolean!
+}
