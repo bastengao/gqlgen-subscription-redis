@@ -1,5 +1,7 @@
 # gqlgen-subscription-redis
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/bastengao/gqlgen-subscription-redis.svg)](https://pkg.go.dev/github.com/bastengao/gqlgen-subscription-redis)
+
 Use redis pub/sub to send graphql subscription message.
 
 ## Example
