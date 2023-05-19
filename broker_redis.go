@@ -57,6 +57,7 @@ func (b *redisBroker) Receive() error {
 			message, err := subscription.handler(id, payload)
 			if err != nil {
 				log.Println(err)
+				continue
 			}
 
 			subscription.channel.Send(reflect.ValueOf(message))
