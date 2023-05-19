@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	sub "gqlgen-subscription-redis"
+
+	sub "github.com/bastengao/gqlgen-subscription-redis"
 
 	"github.com/go-redis/redis/v8"
 )
@@ -15,7 +16,7 @@ func main() {
 		Addr: "127.0.0.1:6379",
 		DB:   0,
 	})
-	var subscriptionBroker = sub.NewRedisBorder(client, redisChannel)
+	var subscriptionBroker = sub.NewRedisBroker(client, redisChannel)
 	messageCh := make(chan string)
 	unsub, err := subscriptionBroker.Subscribe(graphqlChannel, messageCh, func(id string, payload sub.Payload) (interface{}, error) {
 		return string(payload.Data), nil

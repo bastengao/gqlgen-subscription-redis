@@ -23,7 +23,7 @@ func NewResolver() *Resolver {
 	})
 	redisChannel := "graphql_subscription_channel"
 
-	broker := sub.NewRedisBorder(client, redisChannel)
+	broker := sub.NewRedisBroker(client, redisChannel)
 	publisher := sub.NewRedisPublisher(client, redisChannel)
 
 	go func() {
